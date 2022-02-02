@@ -1,7 +1,6 @@
 
 <!-- 
-
-                               _ _     _ _ _ _         
+                                _ _     _ _ _ _         
      /\                        (_) |   (_) (_) |        
     /  \   ___ ___ ___  ___ ___ _| |__  _| |_| |_ _   _ 
    / /\ \ / __/ __/ _ \/ __/ __| | '_ \| | | | __| | | |
@@ -40,7 +39,7 @@ Edited By Ryan Dodd
   <main class="container" role="main">
     <header class="site-header" role="banner">
       <h1>Jam Box Studios</h1>
-      <!-- ADDED NAV TAG & NAV ID -->
+      <!-- ADDED NAV TAG & ID NAV & ARIA ROLE -->
       <nav class="main-nav" id="nav" role="navigation">
         <ul>
           <li><a href="#">Home</a></li>
@@ -49,43 +48,45 @@ Edited By Ryan Dodd
           <li><a href="#">Studio</a></li>
         </ul>
       </nav>
+      <!-- ADDED ARIA LABEL & ALT  -->
       <img src="https://placekitten.com/1200/900" class="banner" alt="cat staring at you" aria-label="cat staring at you">
     </header>
-    <!-- ADDED ARTICLE TAG & MAIN ID -->
+    <!-- ADDED ARTICLE TAG & ID MAIN & ARIA LABEL & ROLE -->
     <article class="main-content" id="main" role="contentinfo" aria-label="info about the studio">
-      <h2>Welcome to Jam Box</h2>
+      <h2 tabindex="0">Welcome to Jam Box</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <h2>Meet the owner</h2>
-      <!-- ADDED ADDRESS TAG -->
-      <address class="owner" role="complementary" aria-label="owners info and address" aria-describedby="owners info">
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+      <h2 tabindex="0">Meet the owner</h2>
+      <!-- ADDED ADDRESS TAG & POSTAL ADDRESS SCHEMA & ARIA LABEL & ROLE -->
+      <address class="owner" role="complementary" aria-label="owners info and address" itemscope itemtype="https://schema.org/PostalAddress" >
+        <ul itemscope itemtype="https://schema.org/Person" >
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobtitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h2>Address</h2>
-        <p>
-          Jambox Studios 
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
-        </p>
+        <h2 tabindex="0"      >Address</h2>
+          <p>
+            <span itemprop="name"> Jambox Studios </span>
+            <span itemprop="streetAddress"> 123 Guitar Road,  </span>
+            <span itemprop="addressLocality"> Musicville, Danceistan  </span>
+            <span itemprop="postalCode"> B3T 0L0 </span> 
+          </p>
       </address>
-      <!-- ADDED SETING TAG & CONTACT ID -->
-      <section class="contact-section" id="contact" role="form" aria-label="this is where you input your info">
+      <!-- ADDED SECTION TAG & ID CONTACT & CONTACTPOINT SCHEMA & ARIA LABEL & ROLE-->
+      <section itemscope itemtype="https://schema.org/ContactPoint" class="contact-section" id="contact" role="form" aria-label="this is where you input your info">
         <h2>Contact Us</h2>
-        <form action="https://cat-bounce.com/">
+        <!-- ADDED FUNNY WEDSITE I FOUND, CLICKING SEND WILL GOTO WEBSITE -->
+        <form action="https://cat-bounce.com/" target=”_blank” aria-label="funny website to checkout">
 
           <label for="FullName">Full Name:</label>
-          <input type="text" placeholder="Full Name" id="FullName">
+          <input itemprop="name" type="text" placeholder="Full Name" id="FullName">
 
           <label for="Email">Email:</label>
-          <input type="text" placeholder="Email" id="Email">
+          <input itemprop="email" type="text" placeholder="Email" id="Email">
 
           <label for="Subject">Subject:</label>
-          <input type="text" placeholder="Subject" id="Subject">
+          <input itemprop="contactType" type="text" placeholder="Subject" id="Subject">
 
           <b>Your Message</b>
           <textarea></textarea>

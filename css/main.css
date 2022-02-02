@@ -101,8 +101,7 @@ button:focus{
 }
 
 nav li a:focus{
-  background-color: rgb(226, 109, 31);
-  
+  background-color: rgb(238, 241, 40);
 }
 
 /* HIDE BULLETS FOR UL MAKE RELATIVE PARENT */
@@ -121,7 +120,11 @@ nav li a:focus{
 /* REVEALS SKIP LINKS WHEN TABBING */
 .skiplinks a:focus{
   top: 0;
-  background:  rgb(226, 127, 135) ;
+  background:  rgb(154, 153, 241) ;
   display: block;
   padding: 10px;
+}     
+
+.main-content h2:focus{
+  background-color: cornflowerblue;
 }
